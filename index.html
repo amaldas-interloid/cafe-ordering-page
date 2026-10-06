@@ -3,246 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>filter-kaapi</title>
+    <title>Filter2 Kaapi</title>
+
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="script.js" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="root">
-      <header class="header">
-        <div class="brand">
-          <span class="brand-mark"> ☕ </span>
-          <div>
-            <h1>Filter Kaapi</h1>
-            <p>Tiffin and coffee, served since 1962</p>
-          </div>
+    <header class="header">
+      <div class="brand">
+        <span class="brand-mark">☕</span>
+
+        <div>
+          <h1>Filter Kaapi</h1>
+          <p>Tiffin and coffee, served since 1962</p>
         </div>
-      </header>
-      <main class="main-layout">
-        <section class="menu">
-          <div class="menu-head">
-            <h2 id="menu-title">Today's menu</h2>
+      </div>
+    </header>
+
+    <main class="main-layout">
+      <section class="menu">
+        <div class="menu-head">
+          <h2>Today's menu</h2>
+        </div>
+
+        <div class="menu-grid" id="menu-grid"></div>
+      </section>
+
+      <aside class="cart">
+        <h2 id="cart-title">Your order (0)</h2>
+
+        <ul class="cart-list" id="cart-list"></ul>
+
+        <p class="cart-empty" id="cart-empty">
+          Your plate is empty. Add a dish from the menu.
+        </p>
+
+        <dl class="bill">
+          <div class="total">
+            <dt>Total</dt>
+            <dd id="total">₹0</dd>
           </div>
-          <div class="menu-grid">
-            <article class="dish">
-              <div class="dish-art">🥞</div>
-              <div class="dish-body">
-                <div>
-                  <div class="dish-title">
-                    <span class="food-mark" title="Vegetarian"></span>
-                    <h3>Ghee Roast Dosa</h3>
-                  </div>
-                  <p class="dish-desc">
-                    Crisp paper dosa with sambar and three chutneys.
-                  </p>
-                  <div class="dish-foot">
-                    <span class="price">₹120</span>
-                    <button class="add-button">Add</button>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="dish">
-              <div class="dish-art">🍚</div>
-              <div class="dish-body">
-                <div>
-                  <div class="dish-title">
-                    <span class="food-mark" title="Vegetarian"></span>
-                    <h3>Idli Vada Combo</h3>
-                  </div>
-                  <p class="dish-desc">
-                    Two soft idlis and one medu vada.
-                  </p>
-                  <div class="dish-foot">
-                    <span class="price">₹120</span>
-                    <button class="add-button">Add</button>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="dish nonveg">
-              <div class="dish-art">🍳</div>
-              <div class="dish-body">
-                <div>
-                  <div class="dish-title">
-                    <span class="food-mark" title="Vegetarian"></span>
-                    <h3>Idli Vada Combo</h3>
-                  </div>
-                  <p class="dish-desc">
-                    Dosa topped with a spiced egg layer.
-                  </p>
-                  <div class="dish-foot">
-                    <span class="price">₹120</span>
-                    <button class="add-button">Add</button>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="dish">
-              <div class="dish-art">🥣</div>
-              <div class="dish-body">
-                <div>
-                  <div class="dish-title">
-                    <span class="food-mark" title="Vegetarian"></span>
-                    <h3>Ghee Roast Dosa</h3>
-                  </div>
-                  <p class="dish-desc">
-                    Crisp paper dosa with sambar and three chutneys.
-                  </p>
-                  <div class="dish-foot">
-                    <span class="price">₹120</span>
-                    <button class="add-button">Add</button>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="dish">
-              <div class="dish-art">🍛</div>
-              <div class="dish-body">
-                <div>
-                  <div class="dish-title">
-                    <span class="food-mark" title="Vegetarian"></span>
-                    <h3>Ghee Roast Dosa</h3>
-                  </div>
-                  <p class="dish-desc">
-                    Crisp paper dosa with sambar and three chutneys.
-                  </p>
-                  <div class="dish-foot">
-                    <span class="price">₹120</span>
-                    <button class="add-button">Add</button>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="dish nonveg">
-              <div class="dish-art">🍗</div>
-              <div class="dish-body">
-                <div>
-                  <div class="dish-title">
-                    <span class="food-mark" title="Vegetarian"></span>
-                    <h3>Ghee Roast Dosa</h3>
-                  </div>
-                  <p class="dish-desc">
-                    Crisp paper dosa with sambar and three chutneys.
-                  </p>
-                  <div class="dish-foot">
-                    <span class="price">₹120</span>
-                    <button class="add-button">Add</button>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="dish">
-              <div class="dish-art">🍚</div>
-              <div class="dish-body">
-                <div>
-                  <div class="dish-title">
-                    <span class="food-mark" title="Vegetarian"></span>
-                    <h3>Ghee Roast Dosa</h3>
-                  </div>
-                  <p class="dish-desc">
-                    Crisp paper dosa with sambar and three chutneys.
-                  </p>
-                  <div class="dish-foot">
-                    <span class="price">₹120</span>
-                    <button class="add-button">Add</button>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="dish nonveg">
-              <div class="dish-art">🍖</div>
-              <div class="dish-body">
-                <div>
-                  <div class="dish-title">
-                    <span class="food-mark" title="Vegetarian"></span>
-                    <h3>Ghee Roast Dosa</h3>
-                  </div>
-                  <p class="dish-desc">
-                    Crisp paper dosa with sambar and three chutneys.
-                  </p>
-                  <div class="dish-foot">
-                    <span class="price">₹120</span>
-                    <button class="add-button">Add</button>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="dish">
-              <div class="dish-art">🧅</div>
-              <div class="dish-body">
-                <div>
-                  <div class="dish-title">
-                    <span class="food-mark" title="Vegetarian"></span>
-                    <h3>Ghee Roast Dosa</h3>
-                  </div>
-                  <p class="dish-desc">
-                    Crisp paper dosa with sambar and three chutneys.
-                  </p>
-                  <div class="dish-foot">
-                    <span class="price">₹120</span>
-                    <button class="add-button">Add</button>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="dish">
-              <div class="dish-art">🌶️</div>
-              <div class="dish-body">
-                <div>
-                  <div class="dish-title">
-                    <span class="food-mark" title="Vegetarian"></span>
-                    <h3>Ghee Roast Dosa</h3>
-                  </div>
-                  <p class="dish-desc">
-                    Crisp paper dosa with sambar and three chutneys.
-                  </p>
-                  <div class="dish-foot">
-                    <span class="price">₹120</span>
-                    <button class="add-button">Add</button>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="dish">
-              <div class="dish-art">☕</div>
-              <div class="dish-body">
-                <div>
-                  <div class="dish-title">
-                    <span class="food-mark" title="Vegetarian"></span>
-                    <h3>Ghee Roast Dosa</h3>
-                  </div>
-                  <p class="dish-desc">
-                    Crisp paper dosa with sambar and three chutneys.
-                  </p>
-                  <div class="dish-foot">
-                    <span class="price">₹120</span>
-                    <button class="add-button">Add</button>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="dish">
-              <div class="dish-art">🥛</div>
-              <div class="dish-body">
-                <div>
-                  <div class="dish-title">
-                    <span class="food-mark" title="Vegetarian"></span>
-                    <h3>Ghee Roast Dosa</h3>
-                  </div>
-                  <p class="dish-desc">
-                    Crisp paper dosa with sambar and three chutneys.
-                  </p>
-                  <div class="dish-foot">
-                    <span class="price">₹120</span>
-                    <button class="add-button">Add</button>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-      </main>
-    </div>
+        </dl>
+      </aside>
+    </main>
   </body>
 </html>
