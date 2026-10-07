@@ -201,6 +201,15 @@ h2 {
   cursor: pointer;
 }
 
+.add-button:hover {
+  color: var(--white);
+}
+
+.add-button.added {
+  background-color: var(--leaf);
+  color: var(--white);
+}
+
 .cart {
   width: 100%;
   padding: 20px 22px 22px;
@@ -215,7 +224,10 @@ h2 {
 }
 
 .cart-list {
+  max-height: 260px;
+  overflow-y: auto;
   list-style: none;
+  padding-right: 8px;
 }
 
 .cart-item {

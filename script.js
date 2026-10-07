@@ -118,6 +118,8 @@ const cartTitle = document.querySelector("#cart-title");
 const totalElement = document.querySelector("#total");
 
 function renderMenu() {
+  menuGrid.textContent = "";
+
   menu.forEach((dish) => {
     const article = document.createElement("article");
 
@@ -165,6 +167,7 @@ function renderMenu() {
 
     if (cartLine) {
       addButton.textContent = `Added (${cartLine.qty})`;
+      addButton.classList.add("added");
     } else {
       addButton.textContent = "Add";
     }
@@ -179,7 +182,7 @@ function renderMenu() {
 
     article.append(dishArt, dishBody);
 
-    menuGrid.append(article);
+    menuGrid.appendChild(article);
   });
 }
 
@@ -194,12 +197,13 @@ function addToCart(id) {
       qty: 1,
     });
   }
+
   renderMenu();
   renderCart();
 }
 
-
 function renderCart() {
+  cartList.textContent = "";
 
   let total = 0;
   let itemCount = 0;
@@ -217,7 +221,7 @@ function renderCart() {
 
     const name = document.createElement("span");
     name.className = "cart-item-name";
-    name.textContent = `${dish.name} x ${line.qty}`;
+    name.textContent = `${dish.name} × ${line.qty}`;
 
     const price = document.createElement("span");
     price.className = "cart-item-price";
@@ -225,7 +229,19 @@ function renderCart() {
 
     listItem.append(name, price);
 
-    cartList.append(listItem);
+    cartList.appendChild(listItem);
   });
+
+  cartTitle.textContent = `Your order (${itemCount})`;
+
+  totalElement.textContent = `₹${total}`;
+
+  if (cart.length === 0) {
+    cartEmpty.style.display = "block";
+  } else {
+    cartEmpty.style.display = "none";
+  }
 }
+
 renderMenu();
+renderCart();
